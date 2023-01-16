@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "atividade3-141cc": {
+      "hosting": {
+        "app": [
+          "atividade3-141cc"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "atividade3-141cc"
+  }
+}
