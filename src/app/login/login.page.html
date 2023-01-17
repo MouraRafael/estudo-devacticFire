@@ -4,6 +4,19 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="ion-padding">
+  <form [formGroup]="credentialsForm" (onsubmit)="login()">
+    <ion-item fill="solid" class="ion-maargin-bottom">
+      <ion-input type="email" placeholder="e-mail" formControlName="email"></ion-input>
+      <ion-note slot="error" *ngIf="(email!.dirty || email!.touched) && email!.errors">e-mail inválido!</ion-note>
+    </ion-item>
+    <ion-item fill="solid" class="ion-maargin-bottom">
+      <ion-input type="password" placeholder="senha" formControlName="password"></ion-input>
+      <ion-note slot="error" *ngIf="(password!.dirty || password!.touched) && password!.errors">Senha Inválida</ion-note>
+    </ion-item>
+
+    <ion-button expand="full" type="submit" [disabled]="!credentialsForm.valid">Login</ion-button>
+    <ion-button expand="full" type="button" (click)="cadastra()">Criar Conta</ion-button>
+  </form>
 
 </ion-content>
